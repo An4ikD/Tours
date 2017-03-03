@@ -1,0 +1,47 @@
+// tours-list.component.scss
+@import '../tours.component';
+
+.search-input {
+  position: relative;
+  display: inline-block;
+  input {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #C9C9C9;
+    transition: border 0.3s;
+  }
+  input:focus, .search-input.focus {
+    border-bottom: solid 2px #969696;
+  }
+  .btn {
+    position: absolute;
+    top: 15px;
+    left: auto;
+    right: 5%;
+  }
+}
+
+.tours-filtering {
+  span {
+    margin: 0px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    md-icon {
+      top: 1px;
+    }
+  }
+}
+
+.tours-list {
+  margin-top: 20px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  .tour-card {
+    width: 20%;
+    cursor: pointer;
+    margin: 5px 10px;
+    md-card-title {
+      font-weight: bold;
+    }
+  }
+}

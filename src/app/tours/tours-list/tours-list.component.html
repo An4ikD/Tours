@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="search-input">
+    <input type="text" placeholder="Поиск">
+    <button class="btn btn-icon"><md-icon class="md-24">search</md-icon></button>
+  </div>
+  <div class="search-select">
+    <label>Категория:</label>
+    <select [(ngModel)]="selected_category">
+      <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+    </select>
+  </div>
+  <div class="search-select">
+    <label>Локация:</label>
+    <select [(ngModel)]="selected_location">
+      <option *ngFor="let location of locations" [ngValue]="location">{{location.name}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="row border-bottom">
+  <div class="tours-filtering">
+    <label>Сортировать: </label>
+    <span>По популярности<md-icon class="md-24">arrow_drop_down</md-icon></span>
+    <span>По дате добавления<md-icon class="md-24">arrow_drop_up</md-icon></span>
+    <span>По цене<md-icon class="md-24">arrow_drop_down</md-icon></span>
+  </div>
+</div>
+
+<div class="tours-list">
+  <md-card class="tour-card">
+    <md-card-header>
+      <md-card-title>Тур "Казахстанская Швейцария"</md-card-title>
+    </md-card-header>
+    <img md-card-image src="assets/img/default-tour-photo.png">
+    <md-card-content>
+      <p>Категория: Туризм</p>
+      <p>Локация: Каркаралинск</p>
+      <p>Сезон: весна-лето</p>
+      <p>Дата обновления: 25.11.2016</p>
+      <p>Автор: Агент Казахстанской Степи (86%)</p>
+      <p style="float: right;">Цена: 15000тг</p>
+    </md-card-content>
+  </md-card>
+  <md-card class="tour-card">
+    <md-card-header>
+      <md-card-title>Тур "Казахстанская Швейцария"</md-card-title>
+    </md-card-header>
+    <img md-card-image src="assets/img/default-tour-photo.png">
+    <md-card-content>
+      <p>Категория: Туризм</p>
+      <p>Локация: Каркаралинск</p>
+      <p>Сезон: весна-лето</p>
+      <p>Дата обновления: 25.11.2016</p>
+      <p>Автор: Агент Казахстанской Степи (86%)</p>
+      <p style="float: right;">Цена: 15000тг</p>
+    </md-card-content>
+  </md-card>
+  <md-card class="tour-card">
+    <md-card-header>
+      <md-card-title>Тур "Казахстанская Швейцария"</md-card-title>
+    </md-card-header>
+    <img md-card-image src="assets/img/default-tour-photo.png">
+    <md-card-content>
+      <p>Категория: Туризм</p>
+      <p>Локация: Каркаралинск</p>
+      <p>Сезон: весна-лето</p>
+      <p>Дата обновления: 25.11.2016</p>
+      <p>Автор: Агент Казахстанской Степи (86%)</p>
+      <p style="float: right;">Цена: 15000тг</p>
+    </md-card-content>
+  </md-card>
+  <md-card class="tour-card">
+    <md-card-header>
+      <md-card-title>Тур "Казахстанская Швейцария"</md-card-title>
+    </md-card-header>
+    <img md-card-image src="assets/img/default-tour-photo.png">
+    <md-card-content>
+      <p>Категория: Туризм</p>
+      <p>Локация: Каркаралинск</p>
+      <p>Сезон: весна-лето</p>
+      <p>Дата обновления: 25.11.2016</p>
+      <p>Автор: Агент Казахстанской Степи (86%)</p>
+      <p style="float: right;">Цена: 15000тг</p>
+    </md-card-content>
+  </md-card>
+  
+</div>
