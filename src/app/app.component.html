@@ -10,8 +10,10 @@
 <div id="main">
   <ul class="navbar navbar-fixed navbar-top">
     <li class="navbar-item">
-      <a class="btn btn-icon" (click)="toggleNav()"><md-icon class="md-24">menu</md-icon></a>
-      <span style="position:absolute;top:50%;transform:translate(0, -50%)">Меню</span>
+      <div class="menu-button" (click)="toggleNav()">
+        <a class="btn btn-icon"><md-icon class="md-24">menu</md-icon></a>
+        <span>Menu</span>
+      </div>
     </li>
   </ul>
 

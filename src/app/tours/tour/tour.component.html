@@ -1,0 +1,40 @@
+<div *ngIf="tour" class="tour-view">
+  <div class="main-tour">
+    <md-card>
+      <md-card-header>
+        <md-card-title>{{tour.title}}</md-card-title>
+      </md-card-header>
+      <div class="clearfix">
+          <img md-card-image src="{{tour.avatarUrl}}" class="slider-image">
+        <span>aksndkmasdasn dkaslnd jkasnd kjasndjk asndjkn asjkdn asjkdn kasnd jkasnd kashndk jasnkdj naskjdn asjkndk</span>
+      </div>
+      <md-card-content>
+        <p><label>Описание: </label>{{tour.description}}</p>
+        <br>
+        <p><label>Цена: </label>{{tour.price}}</p>
+        <br>
+        <p><label>Локация: </label>{{tour.location.name}}</p>
+        <p><label>Сезоны: </label>{{tour.season}}</p>
+        <p><label>Количество людей: </label>{{tour.capacity}}</p>
+        <p><label>Длительность тура: </label>{{tour.duration}}</p>
+        <p><label>Требование: </label>{{tour.requirements}}</p>
+      </md-card-content>
+    </md-card>
+  </div>
+  <div class="similar-tours">
+    <md-card *ngFor="let tour of tours" [routerLink]="['/tours', tour.objectId]" class="tour-card">
+      <md-card-header>
+        <md-card-title>{{tour.title}}</md-card-title>
+      </md-card-header>
+      <img md-card-image src="{{tour.avatarUrl}}">
+      <md-card-content>
+        <p>Категория: {{tour.category.name}}</p>
+        <p>Локация: {{tour.location.name}}</p>
+        <p>Сезон: {{tour.season}}</p>
+        <p>Дата обновления: {{tour.updated | date: 'shortDate'}}</p>
+        <p>Автор: {{tour.author.name}}</p>
+        <p style="text-align:right">Цена: {{tour.price}}</p>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>

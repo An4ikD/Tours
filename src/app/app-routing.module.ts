@@ -1,16 +1,17 @@
 import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { ToursComponent } from './tours/tours.component';
+import { TourComponent } from './tours/tour/tour.component';
 
-const routes: Routes = [
+const appRoutes: Routes = [
+  { path: 'tours', loadChildren: 'app/tours/tours.module#ToursModule' },
   { path: '', redirectTo: '/tours', pathMatch: 'full' },
-  { path: 'tours',  component: ToursComponent },
   { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

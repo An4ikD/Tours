@@ -1,7 +1,49 @@
 // tours.component.scss
 @import '../app.component';
 
+.filter-menu-fixed {
+  position: fixed;
+  margin: 50px 0px;
+  z-index: 98;
+  background-color: #FFF;
+  width: 100%;
+  border-bottom: solid 1px #C9C9C9;
+}
+
 .main-content {
   position: absolute;
-  margin: 65px 0px;
+  width: 100%;
+  margin: 190px 0px;
+  z-index: 1;
+}
+
+.search-input {
+  position: relative;
+  display: inline-block;
+  input {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #C9C9C9;
+    transition: border 0.3s;
+  }
+  input:focus, .search-input.focus {
+    border-bottom: solid 2px #969696;
+  }
+  .btn {
+    position: absolute;
+    top: 15px;
+    left: auto;
+    right: 8%;
+  }
+}
+
+.tours-filtering {
+  span {
+    margin: 0px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    md-icon {
+      top: 1px;
+    }
+  }
 }

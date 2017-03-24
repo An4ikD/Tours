@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Tour } from '../shared/tour.model';
+import { TourService } from '../shared/tour.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tours-list',
   templateUrl: './tours-list.component.html',
@@ -8,22 +12,16 @@ import { Component, OnInit } from '@angular/core';
 export class ToursListComponent implements OnInit {
 
   selected_category: string;
-  categories = [
-    {id: 0, name: "Экстрим"},
-    {id: 1, name: "Семейный"},
-    {id: 2, name: "Детский"}
-  ];
+  tours_collection: Object;
+  tours: Tour[] = [];
   
-  locations = [
-    {id: 0, name: "Алматы"},
-    {id: 1, name: "Каркаралинск"},
-    {id: 2, name: "Боровое"},
-    {id: 3, name: "Балхаш"},
-  ]
-  
-  constructor() { }
+  constructor(
+    private tourService: TourService,
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(): void { 
+    this.tourService.getTours()
+                    .then((object) => { this.tours_collection = object; this.tours = object['data']; console.log(this.tours[0]) })
+                    .catch(err => console.log(err));
   }
-
 }
